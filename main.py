@@ -33,7 +33,7 @@ class __name__():
 	age = ["18", "10", "12"]
 	favorite_games = ["minecraft", "super mario bros", "sonic mania"]
 	
-	# main generation list
+	# main generation dict
 	DICT = {
 		"name": name,
 		"age": age,

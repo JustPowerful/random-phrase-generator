@@ -7,11 +7,15 @@
 """
 
 import random
+import os
 
 class GENERATOR():
 
 	def __init__(self, input_file, output_file, gen_dict):
 		
+		if (os.path.exists(output_file)):
+			os.remove(output_file)
+
 		self.fin = open(input_file, "rt")
 		self.fout = open(output_file, "at")
 		self.gen_dict = gen_dict
@@ -26,18 +30,16 @@ class GENERATOR():
 					self.fout.write(line.replace(tag, random.choice(self.gen_dict[gen_dicts])))
 class __name__():
 	# the code runs here
-
-
 	# generation lists
-	name = ["alex", "ben", "mark", "andy"]
-	age = ["18", "10", "12"]
-	favorite_games = ["minecraft", "super mario bros", "sonic mania"]
+	genre = ["RPG", "FPS", "ADVENTURE", "SURVIVAL", "TYPER", "PUZZLE"]
+	character = ["rebel", "soldier", "hacker", "doctor", "car driver", "sword man", "robot", "kid", "assassin", "builder", "farmer", "time traveller"]
+	enemy = ["corrupted governemnt", "zombies", "viruses", "skeletons", "spiders", "bullies", "monsters"]
 	
 	# main generation dict
 	DICT = {
-		"name": name,
-		"age": age,
-		"favorite_games": favorite_games
+		"genre": genre,
+		"character": character,
+		"enemy": enemy
 	}
 
 	GENERATOR("phrase.txt", "generated.txt", DICT).generate()

@@ -1,3 +1,1 @@
-a ADVENTURE game,
-that tells a story about a doctor
-fighting spiders
+a TYPER game that tells a story about a doctor fighting bats and ends with bad ending
